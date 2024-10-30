@@ -5,7 +5,7 @@ export class CreateUsersTable1730256185726 implements MigrationInterface {
     await queryRunner.query(`
         CREATE TABLE students
         ("id" SERIAL NOT NULL,
-        "email" character varying NOT NULL,
+        "email" character unique varying NOT NULL,
         "password" character varying NOT NULL,
         "age" INT
          );`);
