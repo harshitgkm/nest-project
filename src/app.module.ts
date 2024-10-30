@@ -3,12 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from '.././ormconfig';
+import { StudentsModule } from './modules/students/students.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: async () => typeOrmConfig,
     }),
+    StudentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
